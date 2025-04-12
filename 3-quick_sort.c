@@ -2,7 +2,7 @@
 
 /**
  * lomuto_partition - Partition the array and return the pivot index
- * using Lomuto´s partition shceme.
+ * using Lomuto´s partition scheme.
  *
  * @array: Array to be sorted.
  * @low: Lower index of the partition.
@@ -13,7 +13,6 @@
  */
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
-
 	int pivot = array[high];
 	int i = low - 1;
 	int j;
@@ -24,6 +23,7 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 		if (array[j] < pivot)
 		{
 			i++;
+
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
@@ -37,6 +37,7 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 	array[high] = temp;
 
 	print_array(array, size);
+
 	return (i + 1);
 }
 
@@ -73,4 +74,3 @@ void quick_sort(int *array, size_t size)
 
 	quick_sort_recursive(array, 0, size - 1, size);
 }
-
